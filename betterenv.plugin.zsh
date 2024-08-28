@@ -36,7 +36,7 @@ source_env() {
     echo -ne "\e[6n" >/dev/tty
     read -t 1 -rsdR column </dev/tty
     column="${column##*\[*;}"
-    [[ $column == 1 ]] || echo
+    [[ $column = 1 ]] || echo
 
     # print same-line prompt and output newline character if necessary
     echo -n "betterenv: found '$curenv'. Source it? ([Y]es/[n]o/[a]lways/n[e]ver) "
